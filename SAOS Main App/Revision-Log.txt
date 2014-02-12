@@ -1,0 +1,10 @@
+r1
+	First build which only contains slight modifications to the default template.
+	css files and other styles are not modified
+r2
+	main page change
+	blog link changed to tech.saos instead of saos.co.in/tech
+	added page for Saint Atique
+	site.css changed
+	name refactoring from P01_SAOS to SAOS
+	
