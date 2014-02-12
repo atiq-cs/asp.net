@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using P01_SAOSX.Models;
+using SAOS.Models;
 
-namespace P01_SAOSX.Controllers
+namespace SAOS.Controllers
 {
     public class AccountController : Controller
     {

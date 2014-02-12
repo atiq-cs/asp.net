@@ -11,25 +11,29 @@
     <div class="page">
         <header>
             <div id="title">
-                <h1>SAOSX</h1>
+                <a href="http://saosx.com"><img src="@Url.Content("~/Content/images/SAOS_Banner.png")"></a>
             </div>
-            <div id="logindisplay">
+            <!-- <div id="logindisplay">
                 @Html.Partial("_LogOnPartial")
-            </div>
+            </div> -->
             <nav>
                 <ul id="menu">
                     <li>@Html.ActionLink("Desktop", "Index", "Home")</li>
                     <li>@Html.ActionLink("Cloud", "Cloud", "Home")</li>
-                    <li><a href="http://saosx.com/tech">Blog</a></li>
-                    <li>@Html.ActionLink("SA", "Saint Atique", "Home")</li>
+                    <li><a href="http://tech.saos.co.in">Blog</a></li>
+                    <li>@Html.ActionLink("SA", "Saint_Atique", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                 </ul>
             </nav>
         </header>
+        <section id="navleft">
+        @RenderSection("navigationLeft")
+        </section>
         <section id="main">
             @RenderBody()
         </section>
         <footer>
+        &copy-SAOS (Site Pre-beta) 2012
         </footer>
     </div>
     <script type="text/javascript">

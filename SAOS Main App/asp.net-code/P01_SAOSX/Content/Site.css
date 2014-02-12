@@ -86,7 +86,7 @@ header, #header {
     position: relative;
     margin-bottom: 0px;
     color: #000;
-    padding: 0;
+    padding-top: 30px;
 }
 
 header h1, #header h1 {
@@ -100,26 +100,33 @@ header h1, #header h1 {
     text-shadow: 1px 1px 2px #111;
 }
 
-#main {
-    padding: 30px 30px 15px 30px;
+#navleft {
+    width: 170px;
+    padding: 10px;
+    margin-top: 1px;
     background-color: #fff;
     border-radius: 4px 0 0 0;
-    -webkit-border-radius: 4px 0 0 0;
-    -moz-border-radius: 4px 0 0 0;
+    -webkit-border-radius: 4px;         /* All side round corner */
+    -moz-border-radius: 4px;
+    float: left;
+}
+
+#main {
+    margin-left: 200px;                 /* Added by SA to implement left Menu*/
+    padding: 30px 30px 15px 2.9%;       /* padding: 30px 30px 15px 30px; */
+    background-color: #fff;
+    border-radius: 4px 0 0 0;
+    -webkit-border-radius: 4px 0 4px 4px;
+    -moz-border-radius: 4px 0 4px 4px;
 }
 
 footer, 
 #footer {
-    background-color: #fff;
     color: #999;
-    padding: 10px 0;
+    padding: 40px 0;
     text-align: center;
     line-height: normal;
-    margin: 0 0 30px 0;
     font-size: .9em;
-    border-radius: 0 0 4px 4px;
-    -webkit-border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;
 }
 
 /* TAB MENU   
@@ -243,13 +250,17 @@ table th {
 
 nav, 
 #menucontainer {
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 div#title {
-    display: block;
-    float: left;
-    text-align: left;
+    /*display: block;
+    float: left;*/
+    text-align: center;
+    background-color: #000;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;         /* All side round corner */
+    -moz-border-radius: 10px;
 }
 
 #logindisplay {

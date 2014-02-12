@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace P01_SAOSX.Models
+namespace SAOS.Models
 {
 
     public class ChangePasswordModel
