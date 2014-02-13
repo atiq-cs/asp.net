@@ -42,5 +42,30 @@ r6
 	Controller atiq added to add resume page http://saos.co.in/atiq
 	
 r7
+	renamed publishing profile to saos_deploy_test.pubxml & saos_deploy_test.pubxml.user; location
+		SAOS_Main_VS\Properties\PublishProfiles
+		
+		
+r8
+	Adapting ASP .Net MVC 4
+	Changing controllers
 	
+	MVC 4 has following pages with controller, kept them, replaced contents
+		Home
+		About
+		Contact
+	
+	Removed register login
+	Fixed css, changed logo
+	Lots of file structure change
+	Have to compute the difference and have to apply it
+	Replaced favicon
+	Added atiqController.cs
+	Have to add resource from all php previous sites
+	Title changed in shared Layout: <title>@ViewBag.Title - SAOS Cloud App</title>
+	Blog link added both on shared Layout <li><a href="http://tech.saos.co.in">Blog</a></li> and in About page
+	
+	* deployment test: checking if this revision actually contains all files to successfully build and deploy this application
+	
+r9
 	

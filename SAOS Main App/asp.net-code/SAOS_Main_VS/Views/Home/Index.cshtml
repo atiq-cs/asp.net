@@ -1,30 +1,58 @@
 ﻿@{
-    ViewBag.Title = "Saint Atique Operating System: welcome to SAOS";
+    ViewBag.Title = "SAOS - Cloud is brand new home";
 }
-
-<h2>Desktop Applications released by SAOS</h2>
-<a name="stdt"><h3>Shutdown Timer</h3></a>
-<p>Shutdown Timer is a simple and easy to use software to shut your computer down at specified time and date.
-Being solely coded in win32 it's lite-weight application considering executable size. Project is open-source on <a href="https://stdt.codeplex.com/">codeplex</a> and <a href="https://sourceforge.net/p/stdt/">sourceforge</a>.</p>
-
-<a name="DVDME"><h3>CD/DVD Media Ejector</h3></a>
-<p align="justify">This application helps you eject CD/DVDROM.
-After running the application press Ctrl + J to eject CD/DVDROM. Press Ctrl + J again to close the CD/DVDROM tray.
-Another puprose of the application is that it keeps the weak DVDROM healthy. Project is open-source on <a href="https://sourceforge.net/projects/sacdeject/">sourceforge</a>.</p>
-
-<a name="PingGuin"><h3>PingGuin</h3></a>
-<p>PingGuin is GUI ping software that can ping remote hosts and also can notify when target PC is online or internet is available. Project is open-source on <a href="http://code.google.com/p/pingguin/">google code</a>.</p>
-
-<a name="DT"><h3>Delay Timer</h3></a>
-<p>Windows console based application that will work as a countdown timer. It is useful for windows batch scripts, powershell scripts.
- It also has a Linux version. Project is open-source on <a href="https://sourceforge.net/projects/dtimer/">sourceforge</a>.</p>
-
-@section navigationLeft{
-    <h3>Desktop Applications</h3>
-    <ul>
-        <li><a href="#stdt">Shutdown Timer</a></li>
-        <li><a href="#DVDME">CD/DVD Media Ejector</a></li>
-        <li><a href="#PingGuin">PingGuin</a></li>
-        <li><a href="#DT">Delay Timer</a></li>
-    </ul>
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                @* <h1>@ViewBag.Title.</h1> *@
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                We, at SAOS, mostly deal with <mark>Software Engineering problems</mark>.
+                While we solve such problems we provide frequent update on our <a href="http://tech.saos.co.in" title="SAOS Tech Blog">blog</a> about our innovations.
+                We also released some products which are mostly open-source. Our products are listed below.
+                If you have any query, suggestions about our products, this website please visit our
+                <a href="http://tech.saos.co.in" title="SAOS Tech Blog">blog</a> and feel free to comment.
+            </p>
+        </div>
+    </section>
 }
+<h3>Desktop and Online Applications by SAOS</h3>
+We have special interest towards lite-weight applications that require high level of efficiency
+but smallest executable size, 64 bit applications, Windows SDK applications, Unicode aware applications and IME.
+<ol class="round">
+    <li class="one">
+        <h5>Shutdown Timer</h5>
+        Shutdown Timer is a simple and easy to use software to shut your computer down at specified
+        time and date. Being solely coded in win32 it's lite-weight application considering executable
+        size. Project is open-source on <a href="https://stdt.codeplex.com/" title="Shutdown Timer on codeplex">codeplex</a> and
+        <a href="https://sourceforge.net/p/stdt/" title="Shutdown Timer on sourceforge">sourceforge</a>.
+    </li>
+
+    <li class="two">
+        <h5>CD/DVD Media Ejector</h5>
+        This application helps you eject CD/DVDROM.
+        After running the application press Ctrl + J to eject CD/DVDROM. Press Ctrl + J again to close the CD/DVDROM tray.
+        Another puprose of the application is that it keeps the weak DVDROM healthy. Project is open-source on
+        <a href="https://sourceforge.net/projects/sacdeject/" title="CD/DVD Media Ejector on sourceforge">sourceforge</a>.
+    </li>
+
+    <li class="three">
+        <h5>PingGuin</h5>
+        PingGuin is GUI ping software that can ping remote hosts and also can notify when target PC is online or internet
+        is available. Project is open-source on <a href="http://code.google.com/p/pingguin/" title="Pingguin project, the Net Notifier">google code</a>.
+    </li>
+
+    <li class="four">
+        <h5>Delay Timer</h5>
+        It is a Windows console based application that works as a countdown timer. It can come handy on writing windows batch scripts, powershell scripts.
+        It also has a Linux version. Project is open-source on <a href="https://sourceforge.net/projects/dtimer/" title="Delay Timer on sourceforge">sourceforge</a>.
+    </li>
+
+    <li class="five">
+        <h5>Website of Consulate General of Bangladesh in Hong Kong</h5>
+        We had been affiliated in this project to develop site for Consulate General of Bangladesh in Hong Kong with other members who played
+        exceptioned roles in development. They are Jainal Uddin and Feroz Jahangir Rana..
+    </li>
+</ol>

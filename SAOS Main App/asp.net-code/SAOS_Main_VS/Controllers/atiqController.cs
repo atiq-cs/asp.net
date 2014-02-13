@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SAOS.Controllers
+namespace SAOS_MVC4.Controllers
 {
     public class atiqController : Controller
     {
