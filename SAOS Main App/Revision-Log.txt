@@ -8,3 +8,23 @@ r2
 	site.css changed
 	name refactoring from P01_SAOS to SAOS
 	
+r3
+	Correction of broken links and lots of refactoring, files renamed
+
+r4
+	More renamed fix for sln, project files csproj included
+	
+r5
+	Added images/
+		PingGuin01.png
+		PingGuin02.png
+		PingGuin03.png
+		PingStory02.jpg
+		SA_Signature_Pic01.jpg
+	"SA_Cox06_crop.jpg" has to be changed to "SA_Signature_Pic_149x149.jpg" in html signature
+	
+	Added downloads
+	
+	This revision is for testing if dir likes images come in output deployment package
+r6
+
