@@ -27,4 +27,20 @@ r5
 	
 	This revision is for testing if dir likes images come in output deployment package
 r6
+	images and Downloads directories are not included by default in the deployment package we're moving them to other dirs
+	Resume file SA_Resume_latex.pdf added to the download section
 
+	Code Snippets.docx added
+	Site caption changed to "Saint Atique Operating System: welcome to SAOS"
+	Spelling correction under Shutdown Timer, some descriptions changed
+	Changed ©-SAOS (Site Pre-beta) 2012 to SAOS © 2014
+	From Saint ATique page
+		File cluster link removed
+		fixed msdn link
+		Resume section added, link added
+	Remove link from logo banner
+	Controller atiq added to add resume page http://saos.co.in/atiq
+	
+r7
+	
+	
