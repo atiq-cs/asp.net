@@ -26,9 +26,9 @@ namespace SAOS.Controllers
         {
             return View();
         }
-        public ActionResult GREWords()
+        public String GREWords()
         {
-            return View();
+            return "This page is still nunder construction!";
         }
 
     }
