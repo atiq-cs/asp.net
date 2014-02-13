@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SAOS")]
-[assembly: AssemblyDescription("Special build by Saint Atique")]
+[assembly: AssemblyTitle("MVC4Test")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("SAOS")]
-[assembly: AssemblyProduct("SAOS")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("MVC4Test")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9f4f005d-96b9-42a0-9700-eaf808515339")]
+[assembly: Guid("8347decf-b65b-4549-b442-a21b18623c7b")]
 
 // Version information for an assembly consists of the following four values:
 //
