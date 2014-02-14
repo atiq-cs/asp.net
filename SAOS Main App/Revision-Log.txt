@@ -68,4 +68,16 @@ r8
 	* deployment test: checking if this revision actually contains all files to successfully build and deploy this application
 	
 r9
-	
+	Technical doc added
+	reve_email_address_png added
+	Assembly name changed to SAOS from MVC4Test
+	Lots of error when changing to target framework changed .Net 4. back in .net framework 4.5
+	Deployment successful with .Net 4.5
+	favicon has to be checked by uploading
+		generated ico using http://www.xiconeditor.com/
+		if it does not work then replace
+			<link rel="shortcut icon" href="~/favicon.ico" />
+			with
+			<link rel="shortcut icon" href="http://www.saos.co.in/favicon.ico" />
+		
+r10
