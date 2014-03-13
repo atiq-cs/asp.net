@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SAOS")]
+[assembly: AssemblyTitle("SAOSMain")]
 [assembly: AssemblyDescription("SAOS Cloud App")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("SAOS")]
+[assembly: AssemblyCompany("SAOSLab")]
 [assembly: AssemblyProduct("SAOS Managed App")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]

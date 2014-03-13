@@ -67,7 +67,6 @@ r8
 	
 	* deployment test: checking if this revision actually contains all files to successfully build and deploy this application
 	
-r9
 	Technical doc added
 	reve_email_address_png added
 	Assembly name changed to SAOS from MVC4Test
@@ -79,5 +78,8 @@ r9
 			<link rel="shortcut icon" href="~/favicon.ico" />
 			with
 			<link rel="shortcut icon" href="http://www.saos.co.in/favicon.ico" />
-		
-r10
+	mistakenly we have deployed this revision as r9
+
+r9
+	All saos.co.in has been refactored to saoslab.com inside the project
+	google analytics tracking code udpated
