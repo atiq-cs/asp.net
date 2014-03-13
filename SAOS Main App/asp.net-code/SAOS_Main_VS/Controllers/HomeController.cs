@@ -29,7 +29,7 @@ namespace SAOS_MVC4.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Saint Atique";
+            ViewBag.Message = "SAOS Lab";
 
             return View();
         }

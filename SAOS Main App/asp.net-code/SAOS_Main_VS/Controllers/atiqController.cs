@@ -22,8 +22,8 @@ namespace SAOS_MVC4.Controllers
                 "<title>"+
                 "Resume of Md. Atiqur Rahman"+
                 "</title>"+
-                "<body><p align=\"center\"><a href=\"http://saos.co.in/Downloads/SA_Resume_latex.pdf\">Download original</a><br /><br />" +
-                "<iframe src="+"http://docs.google.com/viewer?url=http%3A%2F%2Fsaos.co.in%2FDownloads%2FSA_Resume_latex.pdf&embedded=true"+
+                "<body><p align=\"center\"><a href=\"http://saoslab.com/Downloads/SA_Resume_latex.pdf\">Download original</a><br /><br />" +
+                "<iframe src="+"http://docs.google.com/viewer?url=http%3A%2F%2Fsaoslab.com%2FDownloads%2FSA_Resume_latex.pdf&embedded=true"+
                 " width=\"1024\" height=\"3900\" style=\"border: none;\"></iframe></p></body></html>";
         }
     }
