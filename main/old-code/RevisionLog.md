@@ -6,7 +6,7 @@ Earlier revision log,
     r2
       main page change
       blog link changed to tech.saos instead of saos.co.in/tech
-      added page for Saint Atique
+      added page for Atiq
       site.css changed
       name refactoring from P01_SAOS to SAOS
       
@@ -34,10 +34,10 @@ Earlier revision log,
       Resume file SA_Resume_latex.pdf added to the download section
 
       Code Snippets.docx added
-      Site caption changed to "Saint Atique Operating System: welcome to SAOS"
+      Site caption changed to "Atiq Operating System: welcome to SAOS"
       Spelling correction under Shutdown Timer, some descriptions changed
       Changed ©-SAOS (Site Pre-beta) 2012 to SAOS © 2014
-      From Saint ATique page
+      From Atique page
         File cluster link removed
         fixed msdn link
         Resume section added, link added
