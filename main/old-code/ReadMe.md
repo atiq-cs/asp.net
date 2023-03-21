@@ -1,6 +1,7 @@
 **Listings**  
 - [Earlier revision log](https://github.com/atiq-cs/asp.net/blob/dev/main/old-code/RevisionLog.md)
 
+Static assets from 2014-02 are added in pertinent dir.
 
 #### Site Design and Requirement Analysis
 - Every page should have ability to handle social interactions.
