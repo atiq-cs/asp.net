@@ -1,0 +1,34 @@
+﻿@page
+@model ContactModel
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+
+<div class="text-center">
+  <h1 class="display-4">@ViewData["Title"]</h1>
+
+  <section class="contact">
+  <header>
+    <h3>Email</h3>
+  </header>
+  <p>
+    <span class="label">Sales</span>
+    <span><a href="mailto:sales@iqubit.xyz">sales@iqubit</a></span>
+  </p>
+  <p>
+    <span class="label">General</span>
+    <span><a href="mailto:support@iqubit.xyz">support@iqubit</a></span>
+    <!--span><img src="~/Images/general_email_address.png" /></span-->
+  </p>
+</section>
+
+<section class="contact">
+  <header>
+    <h3>Twitter</h3>
+  </header>
+  <p>
+    Contact by tweets: <a href="https://twitter.com/bengal_pup" title="Contact via Atiq">Atiq at twitter</a>
+  </p>
+</section>
+</div>
