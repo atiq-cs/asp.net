@@ -1,3 +1,16 @@
+**TODO**  
+What we haven't done yet?
+- linking fav icons and recreating fav icons
+- whether to use wwwroot to store fav icons etc
+- on a related note, linking static images
+
+
+Add a new razor image,
+
+    dotnet new page --name About --namespace Main.Pages --output Pages
+
+
+**Settings/Conf**  
 'appsettings.json',
 ```json
 {
