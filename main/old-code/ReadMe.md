@@ -2,6 +2,14 @@
 - [Earlier revision log](https://github.com/atiq-cs/asp.net/blob/dev/main/old-code/RevisionLog.md)
 
 
+#### Site Design and Requirement Analysis
+- Every page should have ability to handle social interactions.
+- At minimum, commenting feature should be implemented.
+- There will be a page for feedback about the site.
+- Twitter and facebook links should be added so that people can like, share and comment.
+- Web hosting offer pages should be added.
+
+
 *How to put comments on cshtml file?*  
 Use '@',
 
@@ -121,23 +129,25 @@ Match URL always gives relative URL. This is why we need HTTP HOST condition
 
 Rewrite Rule Code Snippets, 2013,
 
+redirect subdomain `tech.saosx.com/*` to `https://saosx.com/tech/*` and same for `blog.saosx.com/*`,
+
 ```asp
 <system.webServer>
   <rewrite>
     <rules>
-      <rule name="Redirect tech sub" stopProcessing="true">
-        <match url=".*" />
-        <conditions>
-          <add input="{HTTP_HOST}" pattern="^tech.saosx.com$" />
-        </conditions>
-        <action type="Redirect" url="http://saosx.com/tech/{R:0}" />
-      </rule>
-      <rule name="Redirect blog sub" stopProcessing="true">
-        <match url=".*" />
-        <conditions>
-          <add input="{HTTP_HOST}" pattern="^blog.saosx.com$" />
-        </conditions>
-        <action type="Redirect" url="http://saosx.com/tech/{R:0}" />
+    <rule name="Redirect tech subdomain" stopProcessing="true">
+      <match url=".*" />
+      <conditions>
+        <add input="{HTTP_HOST}" pattern="^tech.saosx.com$" />
+      </conditions>
+      <action type="Redirect" url="https://saosx.com/tech/{R:0}" />
+    </rule>
+    <rule name="Redirect blog subdomain" stopProcessing="true">
+      <match url=".*" />
+      <conditions>
+        <add input="{HTTP_HOST}" pattern="^blog.saosx.com$" />
+      </conditions>
+      <action type="Redirect" url="https://saosx.com/tech/{R:0}" />
       </rule>
     </rules>
   </rewrite>
@@ -146,42 +156,77 @@ Rewrite Rule Code Snippets, 2013,
 </system.webServer>
 ```
 
+This is the URL Rewrite used on azure site. Redirects both http and https successfully,
 
-Rewrite rules to redirect saos.co.in to saoslab.com,  
-```asp
-<rewrite>
-  <rules>
-  <rule name="Redirect tech blog" stopProcessing="true">
-    <match url=".*" />
-    <conditions>
-      <add input="{HTTP_HOST}" pattern="^tech\.saos\.co\.in$" />
-    </conditions>
-    <action type="Redirect" url="http://tech.saoslab.com/{R:0}" />
-  </rule>
-  <rule name="Redirect tech blog www" stopProcessing="true">
-    <match url=".*" />
-    <conditions>
-      <add input="{HTTP_HOST}" pattern="^www\.tech\.saos\.co\.in$" />
-    </conditions>
-    <action type="Redirect" url="http://tech.saoslab.com/{R:0}" />
-  </rule>
-  <rule name="Redirect old saos" stopProcessing="true">
-    <match url=".*" />
-    <conditions>
-      <add input="{HTTP_HOST}" pattern="^saos\.co\.in$" />
-    </conditions>
-    <action type="Redirect" url="http://saoslab.com/{R:0}" />
-  </rule>
-  <rule name="Redirect www old saos" stopProcessing="true">
-    <match url=".*" />
-    <conditions>
-      <add input="{HTTP_HOST}" pattern="^www\.saos\.co\.in$" />
-    </conditions>
-    <action type="Redirect" url="http://saoslab.com/{R:0}" />
-  </rule>
-  </rules>
-</rewrite>
-```
+    <?xml version="1.0"?>
+    <configuration>
+        <system.webServer>
+            <rewrite>
+                <rules>
+                    <rule name="Redirection enabled" stopProcessing="true">
+                        <match url="(.*)" />
+                        <conditions>
+                            <add input="{HTTP_HOST}" pattern="^sa-blog\.azurewebsites\.net$" />
+                        </conditions>
+                        <action type="Redirect" url="http://tech.saoslab.com/{R:1}" redirectType="Permanent" />
+                    </rule>
+                </rules>
+            </rewrite>
+        </system.webServer>
+    </configuration>
+
+
+Redirecting `tech.saoslab.com/*` to `sa-blog.azurewebsites.net/*`,
+
+**Refs**  
+- http://www.iis.net/learn/extensions/url-rewrite-module/url-rewrite-module-configuration-reference#Rule_pattern_syntax
+- http://weblogs.asp.net/owscott/url-rewrite-protocol-http-https-in-the-action
+
+
+And, here's earlier example with the Area blog version haing a virtual directory, also look at [G Doc - Area blog 2012-01-14](https://docs.google.com/document/d/1Gf35hZrX0bzfWGuT8uMB8ECUUi8oexywuMYzK4UiNE4)
+
+    <rewrite>
+      <rules>
+        <rule name="Redirect tech sub" stopProcessing="true">
+          <match url=".*" />
+          <conditions>
+            <add input="{HTTP_HOST}" pattern="^tech.saosx.com$" />
+          </conditions>
+          <action type="Redirect" url="https://saosx.com/tech/{R:0}" />
+        </rule>
+        <rule name="Redirect blog sub" stopProcessing="true">
+          <match url=".*" />
+          <conditions>
+            <add input="{HTTP_HOST}" pattern="^blog.saosx.com$" />
+          </conditions>
+          <action type="Redirect" url="https://saosx.com/tech/{R:0}" />
+        </rule>
+      </rules>
+
+
+To azure blog, rewrite URL,
+
+    <rewrite>
+      <rules>
+        <rule name="Rewrite to article.aspx">
+          <match url="^tech.saoslab.com(.*)" />
+          <action type="Rewrite" url="sa-blog.azurewebsites.net/{R:1}" />
+        </rule>
+      </rules>
+    </rewrite>
+
+Redirect,
+
+    <rewrite>
+      <rules>
+        <rule name="Redirect tech sub" stopProcessing="true">
+          <match url="tech\.saoslab\.com(.*)	" />
+          <conditions>
+            <add input="{HTTP_HOST}" pattern="^tech.saoslab.com$" />
+          </conditions>
+          <action type="Redirect" url="sa-blog.azurewebsites.net/{R:0}" />
+        </rule>
+      </rules>
 
 
 For mvc4,  
