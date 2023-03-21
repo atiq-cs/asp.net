@@ -2,6 +2,22 @@
 - [Earlier revision log](https://github.com/atiq-cs/asp.net/blob/dev/main/old-code/RevisionLog.md)
 
 
+*How to put comments on cshtml file?*  
+Use '@',
+
+    @* <h1>@ViewBag.Title.</h1> *@
+
+
+**Google Analytics**  
+For the main web app, we add GA tracking code just before `</body>` tag of file: 'Views/Shared/_Layout.cshtml'.
+
+
+**Fav Icon Documentation**
+Seems like fav icon concepts needs some further update.
+- [MSFT - Customizing the Site Icon](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/samples/gg491740\(v=vs.85\))
+- [MSFT - Internet Explorer for Developers](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer)
+
+
 **Changes from history**  
 
 Previous favicon linking on Layout,  
@@ -77,3 +93,190 @@ public class ResumeController : Controller
 ```
   
 *Note the external URL pdf preview using G Docs*!
+
+### Web.Config Changes
+**URL Rewrites**  
+
+How to redirect using IIS Rewrite Module,
+
+To redirect old.saoslab.com/* and www.old.saoslab.com/* to new URL,
+
+    <rule name="Redirect old saos" stopProcessing="true">
+      <match url=".*" />
+      <conditions>
+        <add input="{HTTP_HOST}" pattern="^old\.saoslab\.com$" />
+      </conditions>
+      <action type="Redirect" url="https://saoslab.com/{R:0}" />
+    </rule>
+    <rule name="Redirect www old saos" stopProcessing="true">
+      <match url=".*" />
+      <conditions>
+        <add input="{HTTP_HOST}" pattern="^www.old\.saoslab\.com$" />
+      </conditions>
+      <action type="Redirect" url="https://saoslab.com/{R:0}" />
+
+
+Match URL always gives relative URL. This is why we need HTTP HOST condition
+
+
+Rewrite Rule Code Snippets, 2013,
+
+```asp
+<system.webServer>
+  <rewrite>
+    <rules>
+      <rule name="Redirect tech sub" stopProcessing="true">
+        <match url=".*" />
+        <conditions>
+          <add input="{HTTP_HOST}" pattern="^tech.saosx.com$" />
+        </conditions>
+        <action type="Redirect" url="http://saosx.com/tech/{R:0}" />
+      </rule>
+      <rule name="Redirect blog sub" stopProcessing="true">
+        <match url=".*" />
+        <conditions>
+          <add input="{HTTP_HOST}" pattern="^blog.saosx.com$" />
+        </conditions>
+        <action type="Redirect" url="http://saosx.com/tech/{R:0}" />
+      </rule>
+    </rules>
+  </rewrite>
+  <validation validateIntegratedModeConfiguration="false"/>
+  <modules runAllManagedModulesForAllRequests="true"/>
+</system.webServer>
+```
+
+
+Rewrite rules to redirect saos.co.in to saoslab.com,  
+```asp
+<rewrite>
+  <rules>
+  <rule name="Redirect tech blog" stopProcessing="true">
+    <match url=".*" />
+    <conditions>
+      <add input="{HTTP_HOST}" pattern="^tech\.saos\.co\.in$" />
+    </conditions>
+    <action type="Redirect" url="http://tech.saoslab.com/{R:0}" />
+  </rule>
+  <rule name="Redirect tech blog www" stopProcessing="true">
+    <match url=".*" />
+    <conditions>
+      <add input="{HTTP_HOST}" pattern="^www\.tech\.saos\.co\.in$" />
+    </conditions>
+    <action type="Redirect" url="http://tech.saoslab.com/{R:0}" />
+  </rule>
+  <rule name="Redirect old saos" stopProcessing="true">
+    <match url=".*" />
+    <conditions>
+      <add input="{HTTP_HOST}" pattern="^saos\.co\.in$" />
+    </conditions>
+    <action type="Redirect" url="http://saoslab.com/{R:0}" />
+  </rule>
+  <rule name="Redirect www old saos" stopProcessing="true">
+    <match url=".*" />
+    <conditions>
+      <add input="{HTTP_HOST}" pattern="^www\.saos\.co\.in$" />
+    </conditions>
+    <action type="Redirect" url="http://saoslab.com/{R:0}" />
+  </rule>
+  </rules>
+</rewrite>
+```
+
+
+For mvc4,  
+Change first line,
+
+    <?xml version="1.0"?>” to “<?xml version="1.0" encoding="UTF-8"?>
+
+Correct page version
+
+    <add key="webpages:Version" value="2.0.0.8"/>
+
+Add after this line,
+
+    <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="GET,HEAD,POST,DEBUG,PUT,DELETE,PATCH,OPTIONS" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0"/>
+      </handlers>
+
+Following lines,
+
+    <directoryBrowse enabled="false" />
+    <defaultDocument>
+        <files>
+            <clear />
+            <add value="default.aspx" />
+            <add value="index.aspx" />
+        </files>
+    </defaultDocument>
+
+
+For mvc3,  
+
+**Turn debug off**  
+Change from
+
+    <compilation debug="true" targetFramework="4.0">
+
+to
+
+    <compilation targetFramework="4.0">
+
+And, change this,
+
+    <add name="ApplicationServices"
+      connectionString="data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|aspnetdb.mdf;User Instance=true"
+      providerName="System.Data.SqlClient" />
+
+Add Default pages,
+
+          <add namespace="System.Web.WebPages" />
+        </namespaces>
+      </pages>
+    </system.web>
+
+    <system.webServer>
+      <validation validateIntegratedModeConfiguration="false" />
+      <modules runAllManagedModulesForAllRequests="true" />
+          <directoryBrowse enabled="false" />
+          <defaultDocument>
+              <files>
+                  <clear />
+                  <add value="default.aspx" />
+                  <add value="index.aspx" />
+              </files>
+          </defaultDocument>
+    </system.webServer>
+
+Version control: maintain web app versions,  
+Change,  
+
+    <add key="webpages:Version" value="1.0.0.0"/>
+
+To
+
+    <add key="webpages:Version" value="1.0.0.7"/>
+
+
+**Other Site Dependencies**  
+Consider other site dependencies during deployment:
+- These two directories should be upload to the site separately
+  - images
+  - Downloads
+
+Outgoing links,
+
+My own other sites depend on some links from this site. 
+https://code.google.com/p/pingguin/ used to link to,
+
+    https://saoslab.com/images/PingStory02.jpg
+    https://saoslab.com/images/PingGuin01.png
+    https://saoslab.com/images/PingGuin02.png
+    https://saoslab.com/images/PingGuin03.png
+
+Linked on my email signature,
+
+    https://saoslab.com/images/SA_Cox06_crop.jpg
+
+Changing it to 'SA_Signature_Pic_149x149.jpg'
+
+
