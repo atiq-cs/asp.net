@@ -1,3 +1,16 @@
+For date records of few earlier commits,
+
+    Added two screenshots of solaris for comp.unix.solaris group posting
+    Jan 31, 2015 at 10:19 AM
+
+    Out of file hosting directories added
+    Jan 26, 2015 at 4:30 PM
+
+
+    Only change is compilation with .Net 4.5.1
+    Jan 26, 2015 at 2:12 PM
+
+
 Earlier revision log,
 
     r1
